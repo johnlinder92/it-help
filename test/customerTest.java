@@ -1,20 +1,23 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class customerTest {
+import java.util.ArrayList;
 
-    @Test
+import static org.junit.Assert.assertEquals;
 
-    void createCustomer_Returnscustomer_customerListincreases(){
+ class customerTest {
 
-        Customer customer= new Customer();
 
-        Customerlist customerList = new Customerlist(null);
+     @Test
+     public void createCustomer_Returnscustomer_customerListincreases(){
 
-        int start = customerList.size();
+            Customerlist customerList = new Customerlist(null);
+            Customer customertest = new Customer(null,null,null);
 
-        customerList.add(customer);
+        int start = customerList.acustomerList.size();
 
-        assertEquals(start + 1, customerList.size());
+        customerList.addCustomer(customertest.Createcustomer());
+        
+        assertEquals(start + 1, customerList.acustomerList.size());
 
 
     }
