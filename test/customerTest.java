@@ -8,9 +8,15 @@ public class customerTest {
 
         Customer customer= new Customer();
 
-        
+        Customerlist customerList = new Customerlist(null);
+
+        int start = customerList.size();
 
         customerList.add(customer);
+
+        assertEquals(start + 1, customerList.size());
+
+
     }
 
 
