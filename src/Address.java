@@ -1,3 +1,6 @@
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Address {
 
     private String street;
@@ -9,12 +12,43 @@ public class Address {
         this.postcode = postcode;
         this.city = city;
     }
-    ConsoleHandler consoleHandler= new ConsoleHandler();
 
-    public Address CreateAddress() {
+    public static Address CreateAddress(ConsoleHandler ch) {
 
-        Address address = new Address(consoleHandler.getString("Fyll i gatunamn och nummer:"),consoleHandler.getInt("Fyll i postkod:"),consoleHandler.getString("Fyll i ort:"));
+
+        Address address = new Address(ch.getString("Fyll i gatunamn och nummer:"),ch.getInt("Fyll i postkod:"),ch.getString("Fyll i ort:"));
 
         return address;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", postcode=" + postcode +
+                ", city='" + city + '\'' +
+                '}';
+    }
+
+    public boolean equals(Object o) {
+
+
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+        Address that = (Address)o;
+        for(int i = 0; i < this.getSigFields().length; ++i){
+            if (!Objects.equals(this.getSigFields()[i], that.getSigFields()[i])){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    private Object[] getSigFields(){
+        Object[] result = {
+                street, postcode,city };
+
+        return result;
+}}
+

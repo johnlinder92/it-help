@@ -1,23 +1,29 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
- class customerTest {
+class customerTest {
 
 
      @Test
-     public void createCustomer_Returnscustomer_customerListincreases(){
+     public void createCustomer_Returnscustomer_returnedCustomervaluesarethesameaslocallycreatedcustomer(){
 
-            Customerlist customerList = new Customerlist(null);
-            Customer customertest = new Customer(null,null,null);
+         InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/input2.txt");
+         Scanner scanner = new Scanner(inputStream);
+        ConsoleHandler ch = new ConsoleHandler(scanner);
+        Customer a = Customer.Createcustomer(ch);
 
-        int start = customerList.acustomerList.size();
+        Name name = new Name("Hej","Hej");
+        Address address= new Address("Hej", 5, "Hej");
 
-        customerList.addCustomer(customertest.Createcustomer());
-        
-        assertEquals(start + 1, customerList.acustomerList.size());
+        Customer b = new Customer(name,"Hej", address);
+
+        assertEquals(b, a);
 
 
     }

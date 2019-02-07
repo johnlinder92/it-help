@@ -2,8 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleHandler {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
+    public ConsoleHandler(Scanner scanner) {
+        this.scanner = scanner;
+    }
 
     public int getInt(String s) {
         System.out.println(s);

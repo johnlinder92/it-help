@@ -50,5 +50,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="org.xerial:sqlite-jdbc:3.25.2" level="project" />
+    <orderEntry type="library" name="org.xerial:sqlite-jdbc:3.25.21" level="project" />
   </component>
 </module>
