@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
-import java.io.File;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -14,7 +12,7 @@ public class consolehandlerTest {
     void getInt_ReturnIntValueFromScanner_IntValue10() throws IOException {
 
 
-        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/input.txt")) {
+        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testconsolehandler.txt")) {
 
             Scanner scanner = new Scanner(inputStream);
 
@@ -34,7 +32,7 @@ public class consolehandlerTest {
     void getString_ReturnStringValueFromScanner_StringvalueHej() throws IOException {
 
 
-        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/input2.txt")) {
+        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreatecustomer.txt")) {
 
             Scanner scanner = new Scanner(inputStream);
 

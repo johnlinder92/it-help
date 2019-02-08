@@ -1,8 +1,6 @@
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,8 +10,8 @@ class customerTest {
 
      @Test
      public void createCustomer_Returnscustomer_returnedCustomervaluesarethesameaslocallycreatedcustomer(){
-
-         InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/input2.txt");
+// i det här testet jämför jag en manuellt skapad kund med en kund skapad av min publika metod.
+         InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreatecustomer.txt");
          Scanner scanner = new Scanner(inputStream);
         ConsoleHandler ch = new ConsoleHandler(scanner);
         Customer a = Customer.Createcustomer(ch);

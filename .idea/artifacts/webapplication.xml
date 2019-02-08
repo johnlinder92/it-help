@@ -11,6 +11,9 @@
           <element id="library" level="project" name="org.xerial:sqlite-jdbc:3.25.21" />
         </element>
       </element>
+      <element id="directory" name="images">
+        <element id="dir-copy" path="$PROJECT_DIR$/resources/images" />
+      </element>
     </root>
   </artifact>
 </component>

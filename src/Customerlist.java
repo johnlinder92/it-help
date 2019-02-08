@@ -5,11 +5,7 @@ public class Customerlist {
 
     public Customerlist(ArrayList<Customer> acustomerList) {
         this.acustomerList = acustomerList;
-    }
 
-    public void addCustomer(Customer createcustomer) {
-
-        acustomerList.add(createcustomer);
 
 
     }
