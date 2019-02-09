@@ -3,17 +3,16 @@ import java.util.Objects;
 public class Goods {
 
     private String productname;
-    private String price;
+    private int price;
 
-    public Goods(String productname, String price) {
+    public Goods(String productname, int price) {
         this.productname = productname;
         this.price = price;
     }
 
-
     public static Goods Creategoods(ConsoleHandler ch) {
 
-        Goods goods = new Goods(ch.getString("Ange produktnamn:"),ch.getString("ange pris:"));
+        Goods goods = new Goods(ch.getString("Ange produktnamn:"),ch.getInt("ange pris:"));
         return goods;
     }
 

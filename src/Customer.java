@@ -38,16 +38,13 @@ public class Customer {
         }
 
 
-
-
-
-
     @Override
     public String toString() {
         return "Customer{" +
                 "name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
+                ", cart=" + cart +
                 '}';
     }
 
@@ -93,7 +90,7 @@ public class Customer {
 
         private Object[] getSigFields(){
             Object[] result = {
-                    name, email, address };
+                    name, email, address, cart };
 
             return result;
 

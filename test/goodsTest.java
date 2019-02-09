@@ -15,7 +15,7 @@ public class goodsTest {
         ConsoleHandler ch = new ConsoleHandler(scanner);
         Goods a = Goods.Creategoods(ch);
 
-        Goods b = new Goods("heluu", "halaa");
+        Goods b = new Goods("heluu", 5000);
 
         assertEquals(b, a);
 

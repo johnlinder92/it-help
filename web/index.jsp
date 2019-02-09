@@ -9,6 +9,17 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        video{
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
 
 <body>
 
@@ -64,8 +75,10 @@
         </div>
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-                <img src="house4.jpg" alt="House" style="width:100%">
+                <div class="w3-display-topleft w3-black w3-padding">Testvideo</div>
+                <video width="400"  poster="house4.jpg" controls>
+                    <source src="test.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
