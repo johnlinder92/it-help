@@ -12,10 +12,40 @@ public class Name {
 
     public static Name Createname(ConsoleHandler ch) {
 
-        Name name = new Name(ch.getString("Fyll i ditt förnamn:"),ch.getString("Fyll i dit efternamn:"));
+        //kollar att första värdet på förnamn och efternamn är skrivet med stor bokstav.
 
+        String förnamn = "default";
+        String efternamn = "default";
+        boolean klar = true;
+        while (klar) {
+            förnamn = ch.getString("Fyll i ditt förnamn:");
+
+            Character test = förnamn.charAt(0);
+            if (test.isLowerCase(test)) {
+                System.out.println("Förnamn och efternamn måste börja med stor bokstav. Försök igen");
+
+            } else {
+                efternamn = ch.getString("fyll i ditt efternamn");
+                Character test2 = efternamn.charAt(0);
+                if (test2.isLowerCase(test2)) {
+                    System.out.println("Förnamn och efternamn måste börja med stor bokstav. Försök igen");
+
+                } else {
+
+                    break;
+                }
+            }
+        }
+        Name name = new Name(förnamn, efternamn);
         return name;
+
     }
+
+
+
+
+
+
 
     @Override
     public String toString() {
