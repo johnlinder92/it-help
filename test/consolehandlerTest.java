@@ -11,6 +11,7 @@ public class consolehandlerTest {
     @Test
     void getInt_ReturnIntValueFromScanner_IntValue10() throws IOException {
 
+        //testar att metoden getInt returnerar en Int (10) från en textfil
 
         try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testconsolehandler.txt")) {
 
@@ -31,8 +32,8 @@ public class consolehandlerTest {
     @Test
     void getString_ReturnStringValueFromScanner_StringvalueHej() throws IOException {
 
-
-        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreatecustomer.txt")) {
+// testar att metoden getString returnerar en string ("10") från en textfil
+        try (InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testconsolehandler.txt")) {
 
             Scanner scanner = new Scanner(inputStream);
 
@@ -42,7 +43,7 @@ public class consolehandlerTest {
             String i = ch.getString("");
 
 
-            assertEquals("Hej", i);
+            assertEquals("10", i);
 
         }
 

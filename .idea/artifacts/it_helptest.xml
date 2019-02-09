@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="it-helptest">
+    <output-path>$PROJECT_DIR$/out/artifacts/it_helptest</output-path>
+    <root id="archive" name="it-helptest.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="it-help" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.xerial:sqlite-jdbc:3.25.21" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="it-help/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$/images" />
+    </root>
+  </artifact>
+</component>

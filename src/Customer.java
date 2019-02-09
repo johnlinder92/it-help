@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -6,20 +8,39 @@ public class Customer {
     private Name name;
     private String email;
     private Address address;
+    private ArrayList<Goods> cart;
 
-    public Customer(Name name, String email, Address address) {
+    public Customer(Name name, String email, Address address, ArrayList<Goods> cart) {
         this.name = name;
         this.email = email;
         this.address = address;
+        this.cart = cart;
+    }
+
+    public static ArrayList<Goods> CreatecustomerCart(){
+        ArrayList<Goods> specificCart = new ArrayList();
+
+        return specificCart;
     }
 
 
     public static Customer Createcustomer(ConsoleHandler ch) {
 
-        Customer customer = new Customer(Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch));
+        Customer customer = new Customer(Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
 
         return customer;
     }
+
+
+    public Customer Addgoodstocustomer(Customer customer, Goods goods){
+        customer.cart.add(goods);
+        return customer;
+        }
+
+
+
+
+
 
     @Override
     public String toString() {

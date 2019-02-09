@@ -12,7 +12,7 @@
         </element>
       </element>
       <element id="directory" name="images">
-        <element id="dir-copy" path="$PROJECT_DIR$/resources/images" />
+        <element id="dir-copy" path="$PROJECT_DIR$/images" />
       </element>
     </root>
   </artifact>
