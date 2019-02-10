@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
@@ -35,19 +36,30 @@ class customerTest {
         Scanner scanner = new Scanner(inputStream);
         ConsoleHandler ch = new ConsoleHandler(scanner);
         Customer a = Customer.Createcustomer(ch);
-        Goods vara = new Goods("Hemsida",5000);
-        a.Addgoodstocustomer(a,vara);
+        Goods vara = new Goods("Hemsida", 5000);
+        a.Addgoodstocustomer(a, vara);
 
         ArrayList<Goods> specificCart = new ArrayList();
         Name name = new Name("Hej", "Hej");
         Address address = new Address("Hej", 5, "Hej");
-        Customer b = new Customer(name,"Hej", address,specificCart );
-        Goods varab = new Goods("Hemsida",500);
-        b.Addgoodstocustomer(b,varab);
+        Customer b = new Customer(name, "Hej", address, specificCart);
+        Goods varab = new Goods("Hemsida", 500);
+        b.Addgoodstocustomer(b, varab);
 
         assertEquals(b, a);
 
 
     }
 
+    public void CustomerhasuniqueID_ReturnscustomerwithuniqueID_ReturnedcustomerhasIDonemorethanpreviousaddedcustomer() {
+// i det här testet jämför jag två kunders ID och se att det ökat med 1 per skapad kund.
+        InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreatecustomer.txt");
+        Scanner scanner = new Scanner(inputStream);
+        ConsoleHandler ch = new ConsoleHandler(scanner);
+        Customer a = Customer.Createcustomer(ch);
+        Customer b = Customer.Createcustomer(ch);
+
+
+        AssertTrue(a.getID = b.getID+1);
     }
+}
