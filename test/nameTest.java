@@ -7,6 +7,9 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class nameTest {
+
+    //i det här testet jämför jag namn skapat av min metod och namn skapat manuellt, där jag säkerställer att metoden bara
+    //väljer namn och efternamn som har stor första bokstav.
     @Test
    public void createName_Checksifonlycreatesnameswithcapitalfirstletter_returnsTrue()
    {

@@ -4,13 +4,15 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Customer {
-
+    private int CustomerID;
+    private static int counter;
     private Name name;
     private String email;
     private Address address;
     private ArrayList<Goods> cart;
 
-    public Customer(Name name, String email, Address address, ArrayList<Goods> cart) {
+    public Customer(int customerID, Name name, String email, Address address, ArrayList<Goods> cart) {
+        CustomerID = counter++;
         this.name = name;
         this.email = email;
         this.address = address;
@@ -26,7 +28,7 @@ public class Customer {
 
     public static Customer Createcustomer(ConsoleHandler ch) {
 
-        Customer customer = new Customer(Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
+        Customer customer = new Customer(Customer.getCounter(),Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
 
         return customer;
     }
@@ -41,7 +43,8 @@ public class Customer {
     @Override
     public String toString() {
         return "Customer{" +
-                "name=" + name +
+                "CustomerID=" + CustomerID +
+                ", name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
                 ", cart=" + cart +
@@ -70,6 +73,30 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public int getCustomerID() {
+        return CustomerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        CustomerID = customerID;
+    }
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Customer.counter = counter;
+    }
+
+    public ArrayList<Goods> getCart() {
+        return cart;
+    }
+
+    public void setCart(ArrayList<Goods> cart) {
+        this.cart = cart;
     }
 
     @Override

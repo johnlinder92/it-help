@@ -8,6 +8,7 @@ public class Main {
         ConsoleHandler ch = new ConsoleHandler(scanner);
         ArrayList<Customer> Customerlist= new ArrayList();
         Customerlist.add(Customer.Createcustomer(ch));
+        Customerlist.add(Customer.Createcustomer(ch));
         System.out.println(Customerlist);
     }
 }

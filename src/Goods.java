@@ -3,19 +3,41 @@ import java.util.Objects;
 public class Goods {
 
     private String productname;
-    private int price;
 
-    public Goods(String productname, int price) {
+
+    public Goods(String productname) {
         this.productname = productname;
-        this.price = price;
+
     }
+
+
 
     public static Goods Creategoods(ConsoleHandler ch) {
 
-        Goods goods = new Goods(ch.getString("Ange produktnamn:"),ch.getInt("ange pris:"));
+        Goods goods = new Goods(ch.getString("Ange produktnamn:"));
         return goods;
     }
+    public static Consulting Createconsulting(ConsoleHandler ch) {
 
+        Consulting consulting = new Consulting(ch.getString("Fyll i produktnamn till konsultarbete"),ch.getInt("Fyll i pris per timma på konsultarbetet:"), Name.Createname(ch), ch.getString("Fyll i konsultens färdigheter:") );
+
+        return consulting;
+    }
+
+    public static Websites Createwebsite(ConsoleHandler ch) {
+
+        Websites website = new Websites(ch.getString("Skriv in produktens namn:"), ch.getInt("Ange pris för ett exemplar av denna hemsida:"), ch.getString("Skriv in hemsidans namn:"),ch.getString("Fyll i information om hemsidan:"));
+
+        return website;
+    }
+
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "productname='" + productname + '\'' +
+
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -35,7 +57,7 @@ public class Goods {
 
     private Object[] getSigFields(){
         Object[] result = {
-                productname, price };
+                productname, };
 
         return result;
 

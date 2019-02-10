@@ -15,7 +15,47 @@ public class goodsTest {
         ConsoleHandler ch = new ConsoleHandler(scanner);
         Goods a = Goods.Creategoods(ch);
 
-        Goods b = new Goods("heluu", 5000);
+        Goods b = new Goods("heluu");
+
+        assertEquals(b, a);
+
+
+
+
+
+
+    }
+    @Test
+    public void createConsulting_Returnsconsultingobject_consultingsobjectvaluessameaslocallycreatedconsultingobject() {
+// i det här testet jämför jag en manuellt skapad vara med en vara skapad av min publika metod.
+        InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreategoods.txt");
+        Scanner scanner = new Scanner(inputStream);
+        ConsoleHandler ch = new ConsoleHandler(scanner);
+        Consulting consulting = Goods.Createconsulting(ch);
+
+
+        Name name = new Name("John", "Linder");
+
+       Consulting b = new Consulting("heluu", 5000, name, "hej");
+
+
+        assertEquals(b, consulting);
+
+
+
+
+
+
+    }
+    @Test
+    public void createWebsites_Returnswebsitesobject_websiteobjectvaluessameaslocallycreatedwebsiteobject() {
+// i det här testet jämför jag en manuellt skapad vara med en vara skapad av min publika metod.
+        InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreategoods.txt");
+        Scanner scanner = new Scanner(inputStream);
+        ConsoleHandler ch = new ConsoleHandler(scanner);
+       Websites a = Goods.Createwebsite(ch);
+
+     Websites b = new Websites("heluu", 5000, "John","Linder");
 
         assertEquals(b, a);
 
