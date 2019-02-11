@@ -25,6 +25,17 @@ public class Customer {
         return specificCart;
     }
 
+    public static int calculateTotalcartprice( ArrayList<Goods> customercart){
+        int i;
+        int total = 0;
+        for(i=0;i<customercart.size();i++ ){
+            total += customercart.get(i).getPrice();
+
+        }
+
+return total;
+
+    }
 
     public static Customer Createcustomer(ConsoleHandler ch) {
 
@@ -47,7 +58,7 @@ public class Customer {
                 ", name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
-                ", cart=" + cart +
+                ", cart=" + cart + "Totalcartprice:" + calculateTotalcartprice(cart)+
                 '}';
     }
 

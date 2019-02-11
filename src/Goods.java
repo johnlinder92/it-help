@@ -1,32 +1,46 @@
 import java.util.Objects;
 
 public class Goods {
-
+    private int price;
     private String productname;
 
 
-    public Goods(String productname) {
+    public Goods(int price, String productname) {
+        this.price = price;
         this.productname = productname;
-
     }
 
+    public int getPrice() {
+        return price;
+    }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getProductname() {
+        return productname;
+    }
+
+    public void setProductname(String productname) {
+        this.productname = productname;
+    }
 
     public static Goods Creategoods(ConsoleHandler ch) {
 
-        Goods goods = new Goods(ch.getString("Ange produktnamn:"));
+        Goods goods = new Goods(ch.getInt("Fyll i produktens pris"), ch.getString("Ange produktnamn:"));
         return goods;
     }
     public static Consulting Createconsulting(ConsoleHandler ch) {
 
-        Consulting consulting = new Consulting(ch.getString("Fyll i produktnamn till konsultarbete"),ch.getInt("Fyll i pris per timma på konsultarbetet:"), Name.Createname(ch), ch.getString("Fyll i konsultens färdigheter:") );
+        Consulting consulting = new Consulting(ch.getInt("Fyll i priset per timma på konsultarbetet:"),ch.getString("Fyll i produktens namn:"), Name.Createname(ch), ch.getString("Fyll i konsultens styrkor:"));
 
         return consulting;
     }
 
     public static Websites Createwebsite(ConsoleHandler ch) {
 
-        Websites website = new Websites(ch.getString("Skriv in produktens namn:"), ch.getInt("Ange pris för ett exemplar av denna hemsida:"), ch.getString("Skriv in hemsidans namn:"),ch.getString("Fyll i information om hemsidan:"));
+        Websites website = new Websites( ch.getInt("Ange pris för ett exemplar av denna hemsida:"), ch.getString("Skriv in produktens namn:"), ch.getString("Skriv in hemsidans namn:"),ch.getString("Fyll i information om hemsidan:"));
 
         return website;
     }
@@ -34,8 +48,8 @@ public class Goods {
     @Override
     public String toString() {
         return "Goods{" +
-                "productname='" + productname + '\'' +
-
+                "price=" + price +
+                ", productname='" + productname + '\'' +
                 '}';
     }
 
@@ -57,7 +71,7 @@ public class Goods {
 
     private Object[] getSigFields(){
         Object[] result = {
-                productname, };
+                price, productname, };
 
         return result;
 

@@ -37,7 +37,7 @@ class customerTest {
         ConsoleHandler ch = new ConsoleHandler(scanner);
 
         Customer a = Customer.Createcustomer(ch);
-        Goods vara = new Goods("Hemsida");
+        Goods vara = new Goods(5000,"Hemsida");
         a.Addgoodstocustomer(a, vara);
 
         Name name = new Name("Hej", "Hej");
@@ -46,7 +46,7 @@ class customerTest {
         Customer b = new Customer(Customer.getCounter(), name, "Hej", address, specificCart);
 
 
-        Goods varab = new Goods("Hemsida");
+        Goods varab = new Goods(5000,"Hemsida");
         b.getCart().add(varab);
 
 
@@ -65,5 +65,26 @@ class customerTest {
 
 
         assertEquals(a.getCustomerID()+1, b.getCustomerID());
+    }
+
+    @Test
+    public void calculatetotalCartprice_returnstotalcartprice_manuallYcalculatedcartpricesameasmethodcalculatedcartprice(){
+        // i det här testet jämför jag manuellt uträknad totalavarukorgspris med varukorgspris uträknat av min publika metod.
+        InputStream inputStream = consolehandlerTest.class.getResourceAsStream("/testcreatecustomer.txt");
+        Scanner scanner = new Scanner(inputStream);
+        ConsoleHandler ch = new ConsoleHandler(scanner);
+        Customer a = Customer.Createcustomer(ch);
+
+        Websites b = new Websites(5000,"heluu",  "John","Linder");
+        Name name = new Name("John", "Linder");
+        Consulting ba = new Consulting(900, "Test",name,"test" );
+        a.Addgoodstocustomer(a,b);
+        a.Addgoodstocustomer(a,ba);
+
+        int methodcreated = Customer.calculateTotalcartprice(a.getCart());
+        int locallycreated = b.getPrice()+ba.getPrice();
+
+        assertEquals(methodcreated, locallycreated);
+
     }
 }

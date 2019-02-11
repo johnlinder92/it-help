@@ -15,7 +15,7 @@ public class goodsTest {
         ConsoleHandler ch = new ConsoleHandler(scanner);
         Goods a = Goods.Creategoods(ch);
 
-        Goods b = new Goods("heluu");
+        Goods b = new Goods(5000,"heluu");
 
         assertEquals(b, a);
 
@@ -36,15 +36,10 @@ public class goodsTest {
 
         Name name = new Name("John", "Linder");
 
-       Consulting b = new Consulting("heluu", 5000, name, "hej");
+       Consulting b = new Consulting(5000, "heluu", name, "hej");
 
 
         assertEquals(b, consulting);
-
-
-
-
-
 
     }
     @Test
@@ -55,14 +50,11 @@ public class goodsTest {
         ConsoleHandler ch = new ConsoleHandler(scanner);
        Websites a = Goods.Createwebsite(ch);
 
-     Websites b = new Websites("heluu", 5000, "John","Linder");
+     Websites b = new Websites(5000,"heluu",  "John","Linder");
 
         assertEquals(b, a);
 
-
-
-
-
-
     }
+
+
 }

@@ -2,27 +2,40 @@ import java.util.Objects;
 
 public class Websites extends Goods {
 
-    private int price;
+
     private String websiteName;
     private String websitedescription;
 
-    public Websites(String productname, int price, String websiteName, String websitedescription) {
-        super(productname);
-        this.price = price;
+
+    public Websites(int price, String productname, String websiteName, String websitedescription) {
+        super(price, productname);
         this.websiteName = websiteName;
+        this.websitedescription = websitedescription;
+    }
+
+    public String getWebsiteName() {
+        return websiteName;
+    }
+
+    public void setWebsiteName(String websiteName) {
+        this.websiteName = websiteName;
+    }
+
+    public String getWebsitedescription() {
+        return websitedescription;
+    }
+
+    public void setWebsitedescription(String websitedescription) {
         this.websitedescription = websitedescription;
     }
 
     @Override
     public String toString() {
         return "Websites{" +
-                "price=" + price + "sek/website"+
-                ", websiteName='" + websiteName + '\'' +
+                "websiteName='" + websiteName + '\'' +
                 ", websitedescription='" + websitedescription + '\'' +
                 '}';
     }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -44,7 +57,7 @@ public class Websites extends Goods {
 
     private Object[] getSigFields(){
         Object[] result = {
-                price, websiteName, websitedescription };
+                 websiteName, websitedescription };
 
         return result;
 

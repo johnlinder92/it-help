@@ -2,24 +2,37 @@ import java.util.Objects;
 
 public class Consulting extends Goods {
 
-    private int price;
     private Name consultantName;
     private String consultantStrenghts;
 
 
-    public Consulting(String productname, int price, Name consultantName, String consultantStrenghts) {
-        super(productname);
-        this.price = price;
+    public Consulting(int price, String productname, Name consultantName, String consultantStrenghts) {
+        super(price, productname);
         this.consultantName = consultantName;
+        this.consultantStrenghts = consultantStrenghts;
+    }
+
+    public Name getConsultantName() {
+        return consultantName;
+    }
+
+    public void setConsultantName(Name consultantName) {
+        this.consultantName = consultantName;
+    }
+
+    public String getConsultantStrenghts() {
+        return consultantStrenghts;
+    }
+
+    public void setConsultantStrenghts(String consultantStrenghts) {
         this.consultantStrenghts = consultantStrenghts;
     }
 
     @Override
     public String toString() {
         return "Consulting{" +
-                "consultantName='" + consultantName + '\'' +
-                ", consultantStrenghts='" + consultantStrenghts + '\'' +
-                ", price=" + price +"Sek/hour"+
+                "consultantName=" + consultantName +
+                ", consultantStrenghts='" + consultantStrenghts + '\''+"Price:" + getPrice()+
                 '}';
     }
 
@@ -43,7 +56,7 @@ public class Consulting extends Goods {
 
     private Object[] getSigFields(){
         Object[] result = {
-                price, consultantName, consultantStrenghts };
+                 consultantName, consultantStrenghts };
 
         return result;
 
