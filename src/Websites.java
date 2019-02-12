@@ -32,7 +32,7 @@ public class Websites extends Goods implements Serializable {
 
     @Override
     public String toString() {
-        return "Websites{" + "Price:"+ super.getPrice()+
+        return "Websites{" +"Produktnamn" +super.getProductname()+ "Price:"+ super.getPrice()+ "per hemsida"+
                 "websiteName='" + websiteName + '\'' +
                 ", websitedescription='" + websitedescription + '\'' +
                 '}';

@@ -3,21 +3,21 @@ import java.util.Objects;
 
 public class Consulting extends Goods implements Serializable {
 
-    private Name consultantName;
+    private String consultantName;
     private String consultantStrenghts;
 
 
-    public Consulting(int price, String productname, Name consultantName, String consultantStrenghts) {
+    public Consulting(int price, String productname, String consultantName, String consultantStrenghts) {
         super(price, productname);
         this.consultantName = consultantName;
         this.consultantStrenghts = consultantStrenghts;
     }
 
-    public Name getConsultantName() {
+    public String getConsultantName() {
         return consultantName;
     }
 
-    public void setConsultantName(Name consultantName) {
+    public void setConsultantName(String consultantName) {
         this.consultantName = consultantName;
     }
 
@@ -31,9 +31,9 @@ public class Consulting extends Goods implements Serializable {
 
     @Override
     public String toString() {
-        return "Consulting{" +
+        return "Consulting{" +"Produktnamn" +super.getProductname()+ "Price:"+ super.getPrice()+ "per timme"+
                 "consultantName=" + consultantName +
-                ", consultantStrenghts='" + consultantStrenghts + '\''+"Price:" + getPrice()+
+                ", consultantStrenghts='" + consultantStrenghts + '\''+
                 '}';
     }
 

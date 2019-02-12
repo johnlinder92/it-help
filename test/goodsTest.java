@@ -36,7 +36,7 @@ public class goodsTest {
 
         Name name = new Name("John", "Linder");
 
-       Consulting b = new Consulting(5000, "heluu", name, "hej");
+       Consulting b = new Consulting(5000, "heluu", "Test", "hej");
 
 
         assertEquals(b, consulting);

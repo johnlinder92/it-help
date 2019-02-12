@@ -34,7 +34,7 @@ public class Goods implements Serializable {
     }
     public static Consulting Createconsulting(ConsoleHandler ch) {
 
-        Consulting consulting = new Consulting(ch.getInt("Fyll i priset per timma på konsultarbetet:"),ch.getString("Fyll i produktens namn:"), Name.Createname(ch), ch.getString("Fyll i konsultens styrkor:"));
+        Consulting consulting = new Consulting(ch.getInt("Fyll i priset per timma på konsultarbetet:"),ch.getString("Fyll i produktens namn:"),ch.getString("fyll i konsultens för och efternamn"), ch.getString("Fyll i konsultens styrkor:"));
 
         return consulting;
     }

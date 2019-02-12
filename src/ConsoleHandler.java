@@ -22,6 +22,11 @@ public class ConsoleHandler {
             System.out.println("Felaktig inmatning!");
 
         }
+        catch(NumberFormatException a){
+
+            System.out.println("Felaktig inmatning!");
+
+        }
 
         return tal;
 
@@ -35,6 +40,11 @@ public class ConsoleHandler {
             text = scanner.nextLine();
 
         } catch (InputMismatchException e) {
+
+            System.out.println("Felaktig inmatning!");
+
+        }
+        catch(NumberFormatException a){
 
             System.out.println("Felaktig inmatning!");
 

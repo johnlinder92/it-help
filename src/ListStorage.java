@@ -12,12 +12,25 @@ import java.util.ArrayList;
             loadFromFile();
         }
 
+        public Customer findFirstCustomer(String name){
+            for (Customer c : kundlista ) {
+                if( c.getName().getFörnamn().equals(name))
+                    return c;
+            }
+            ArrayList<Goods> nocart= new ArrayList();
+            return new Customer(new Name("ingen", "alls"),"ingenemail",nocart,new Address("ingengata", 00000, "ingenstad"));
+        }
+
         public void addCustomer(Customer customer){
             kundlista.add(customer);
-            saveToFile();
+            //saveToFile();
         }
         public void addGoods(Goods goods){
-            varulager.add(goods);
+           varulager.add(goods);
+            //saveToFile();
+        }
+
+        public void close(){
             saveToFile();
         }
 

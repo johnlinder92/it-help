@@ -1,23 +1,25 @@
 import java.io.Serializable;
 import java.lang.reflect.Array;
+import java.rmi.server.UID;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Customer implements Serializable {
-    private int customerID;
+
+    private static UUID CustomerID = UUID.randomUUID();
     private static int counter;
     private Name name;
     private String email;
     private ArrayList<Goods> cart;
     private Address address;
 
-    public Customer(int customerID, Name name, String email, Address address, ArrayList<Goods> cart) {
-        this.customerID = counter++;
+    public Customer(Name name, String email, ArrayList<Goods> cart, Address address) {
         this.name = name;
         this.email = email;
-        this.address = address;
         this.cart = cart;
+        this.address = address;
     }
 
     public static ArrayList<Goods> CreatecustomerCart(){
@@ -40,7 +42,7 @@ return total;
 
     public static Customer Createcustomer(ConsoleHandler ch) {
 
-        Customer customer = new Customer(getCounter(),Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
+        Customer customer = new Customer(Name.Createname(ch), ch.getString("Skriv in din email:"), CreatecustomerCart(),Address.CreateAddress(ch));
 
         return customer;
     }
@@ -55,7 +57,7 @@ return total;
     @Override
     public String toString() {
         return "Customer{" +
-                "CustomerID=" + customerID +
+                "CustomerID=" + CustomerID +
                 ", name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
@@ -87,12 +89,12 @@ return total;
         this.address = address;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public static UUID getCustomerID() {
+        return CustomerID;
     }
 
-    public void setCustomerID(int customerID) {
-        customerID = customerID;
+    public static void setCustomerID(UUID customerID) {
+        CustomerID = customerID;
     }
 
     public static int getCounter() {

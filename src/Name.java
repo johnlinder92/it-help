@@ -11,6 +11,22 @@ public class Name implements Serializable {
         this.efternamn = efternamn;
     }
 
+    public String getFörnamn() {
+        return förnamn;
+    }
+
+    public void setFörnamn(String förnamn) {
+        this.förnamn = förnamn;
+    }
+
+    public String getEfternamn() {
+        return efternamn;
+    }
+
+    public void setEfternamn(String efternamn) {
+        this.efternamn = efternamn;
+    }
+
     public static Name Createname(ConsoleHandler ch) {
 
         //kollar att första värdet på förnamn och efternamn är skrivet med stor bokstav.
@@ -39,6 +55,8 @@ public class Name implements Serializable {
         }
         Name name = new Name(förnamn, efternamn);
         return name;
+
+
 
     }
 
