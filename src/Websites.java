@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Websites extends Goods {
+public class Websites extends Goods implements Serializable {
 
 
     private String websiteName;
@@ -31,7 +32,7 @@ public class Websites extends Goods {
 
     @Override
     public String toString() {
-        return "Websites{" +
+        return "Websites{" + "Price:"+ super.getPrice()+
                 "websiteName='" + websiteName + '\'' +
                 ", websitedescription='" + websitedescription + '\'' +
                 '}';

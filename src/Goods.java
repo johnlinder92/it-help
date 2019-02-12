@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Goods {
+public class Goods implements Serializable {
     private int price;
     private String productname;
 

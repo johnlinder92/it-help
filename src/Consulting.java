@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Consulting extends Goods {
+public class Consulting extends Goods implements Serializable {
 
     private Name consultantName;
     private String consultantStrenghts;

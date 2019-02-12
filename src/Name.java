@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Name {
+public class Name implements Serializable {
     private String förnamn;
     private String efternamn;
 

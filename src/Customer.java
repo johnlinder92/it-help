@@ -1,18 +1,19 @@
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Customer {
-    private int CustomerID;
+public class Customer implements Serializable {
+    private int customerID;
     private static int counter;
     private Name name;
     private String email;
-    private Address address;
     private ArrayList<Goods> cart;
+    private Address address;
 
     public Customer(int customerID, Name name, String email, Address address, ArrayList<Goods> cart) {
-        CustomerID = counter++;
+        this.customerID = counter++;
         this.name = name;
         this.email = email;
         this.address = address;
@@ -39,7 +40,7 @@ return total;
 
     public static Customer Createcustomer(ConsoleHandler ch) {
 
-        Customer customer = new Customer(Customer.getCounter(),Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
+        Customer customer = new Customer(getCounter(),Name.Createname(ch), ch.getString("Skriv in din email:"), Address.CreateAddress(ch), CreatecustomerCart());
 
         return customer;
     }
@@ -54,7 +55,7 @@ return total;
     @Override
     public String toString() {
         return "Customer{" +
-                "CustomerID=" + CustomerID +
+                "CustomerID=" + customerID +
                 ", name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
@@ -87,11 +88,11 @@ return total;
     }
 
     public int getCustomerID() {
-        return CustomerID;
+        return customerID;
     }
 
     public void setCustomerID(int customerID) {
-        CustomerID = customerID;
+        customerID = customerID;
     }
 
     public static int getCounter() {

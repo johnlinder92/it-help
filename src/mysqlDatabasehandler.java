@@ -1,3 +1,4 @@
+/*
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -16,7 +17,8 @@ public class mysqlDatabasehandler implements Storage {
             //Skapa tabell för Customers om den inte finns
             String sql_create_tabel = "CREATE TABLE IF NOT EXISTS Customers(" +
                     "ID integer PRIMARY KEY," +
-                    "Name String );";
+                    "Email String);";
+
 
             Statement stmt = sqliteConnection.createStatement();
             stmt.execute(sql_create_tabel);
@@ -34,8 +36,8 @@ public class mysqlDatabasehandler implements Storage {
             Connection sqliteConnection = DriverManager.getConnection(path,"root", "qaPAgTcP5q");
 
             //Lägg till en kund i tabellen Customers
-            String sql_insert_customer = "INSERT INTO Customers(Name)" +
-                    " VALUES('"+ customer.getName() +  "');";
+            String sql_insert_customer = "INSERT INTO Customers(Email)" +
+                    " VALUES('"+ customer.getEmail() + "');";
 
 
             Statement stmt = sqliteConnection.createStatement();
@@ -89,4 +91,5 @@ public class mysqlDatabasehandler implements Storage {
     }
 }
 
+*/
 
