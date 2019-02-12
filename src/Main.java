@@ -16,7 +16,18 @@ public class Main {
         Customerlist.get(0).Addgoodstocustomer(Customerlist.get(0), consulting );
         Customerlist.get(0).Addgoodstocustomer(Customerlist.get(0), consulting2 );
 
-        System.out.println(Customerlist);
+        Storage storage = new mysqlDatabasehandler();
+        storage.addCustomer(Customerlist.get(0));
+
+
+        String name3 = ch.getString("Sök Kund");
+
+        Customer searchResult = storage.findFirstCustomer(name3);
+
+        System.out.println(searchResult);
+
+
+
 
 
     }

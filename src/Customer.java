@@ -58,7 +58,7 @@ return total;
                 ", name=" + name +
                 ", email='" + email + '\'' +
                 ", address=" + address +
-                ", cart=" + cart + "Totalcartprice:" + calculateTotalcartprice(cart)+
+                ", cart=" + cart +
                 '}';
     }
 
