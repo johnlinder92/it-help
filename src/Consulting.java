@@ -31,7 +31,7 @@ public class Consulting extends Goods implements Serializable {
 
     @Override
     public String toString() {
-        return "Consulting{" +"Produktnamn" +super.getProductname()+ "Price:"+ super.getPrice()+ "per timme"+
+        return "Consulting{" +"Produktnamn"+" : " +super.getProductname()+ " "+ "Price:"+ super.getPrice()+ "per timme"+
                 "consultantName=" + consultantName +
                 ", consultantStrenghts='" + consultantStrenghts + '\''+
                 '}';
