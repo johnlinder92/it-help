@@ -1,4 +1,4 @@
-public interface Storage {
+public interface Storage{
 
     void addCustomer(Customer customer);
 

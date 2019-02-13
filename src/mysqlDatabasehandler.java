@@ -1,10 +1,13 @@
 /*
+
 import java.sql.*;
 import java.util.ArrayList;
 
 
 public class mysqlDatabasehandler implements Storage {
 
+    ArrayList<Customer> kundlista = new ArrayList();
+    ArrayList<Goods> varulager = new ArrayList();
 
 
     String path = "jdbc:mysql://35.189.87.92:3306/ithelpdatabase";
@@ -17,7 +20,8 @@ public class mysqlDatabasehandler implements Storage {
             //Skapa tabell för Customers om den inte finns
             String sql_create_tabel = "CREATE TABLE IF NOT EXISTS Customers(" +
                     "ID integer PRIMARY KEY," +
-                    "Email String);";
+                    "förnamn TEXT," +
+                    "efternamn TEXT);";
 
 
             Statement stmt = sqliteConnection.createStatement();
@@ -36,8 +40,8 @@ public class mysqlDatabasehandler implements Storage {
             Connection sqliteConnection = DriverManager.getConnection(path,"root", "qaPAgTcP5q");
 
             //Lägg till en kund i tabellen Customers
-            String sql_insert_customer = "INSERT INTO Customers(Email)" +
-                    " VALUES('"+ customer.getEmail() + "');";
+            String sql_insert_customer = "INSERT INTO Customers(name)" +
+                    " VALUES('"+ customer.getName().getFörnamn() + customer.getName().getEfternamn()+ "');";
 
 
             Statement stmt = sqliteConnection.createStatement();
@@ -59,7 +63,7 @@ public class mysqlDatabasehandler implements Storage {
         Name name1 = new Name("Noone", "Noone");
         Address daddress = new Address("Defaultstreet", 18160,"Defaultcity");
         ArrayList<Goods> listan = new ArrayList();
-        Customer customer = new Customer(-1, name1, "Defaultemail",daddress, listan);
+        Customer customer = new Customer( name1, "Defaultemail",listan, daddress);
 
         try {
 
@@ -77,7 +81,7 @@ public class mysqlDatabasehandler implements Storage {
                 Name name4 = new Name(rs.getString("firstname"),rs.getString("lastname"));
                 Address address2 = new Address(rs.getString("street"), rs.getInt("postcode"),rs.getString("city"));
                 ArrayList<Goods> lista = new ArrayList();
-                customer = new Customer(rs.getInt("customerID"),name4, rs.getString("email"),address2, lista);
+                customer = new Customer(name4, rs.getString("email"),lista,address2);
             }
             rs.close();
             stmt.close();
@@ -92,4 +96,6 @@ public class mysqlDatabasehandler implements Storage {
 }
 
 */
+
+
 

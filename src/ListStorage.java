@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
-    public class ListStorage implements Serializable{
+    public class ListStorage implements Serializable,Storage{
 
 
         ArrayList<Customer> kundlista = new ArrayList();

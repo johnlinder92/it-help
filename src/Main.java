@@ -13,7 +13,7 @@ public class Main {
         while (backup) {
             backup = false;
             int val = ch.getInt("Skriv in 1 för att lägga till varor i varuregistret,\n" + "2 för att skapa en ny kund, 3 för att lägga till vara till en kund, 4 för " +
-                    "att skriva ut alla befintliga kunder och 5 för att skriva ut varulagret, \n" + "6 för att skriva ut en specifik kund, 7 för att avsluta och spara ner kunder och varor, 8 för att avsluta utan att spara");
+                    "att skriva ut alla befintliga kunder, 5 för att skriva ut varulagret, \n" + "6 för att skriva ut en specifik kund, 7 för att avsluta och spara ner kunder och varor, 8 för att avsluta utan att spara");
 
 
             switch (val) {
@@ -87,7 +87,10 @@ break;
                     storage.close();
                     break;
                 case 8: break;
-
+                default:
+                    System.out.println("fel val, försök igen");
+                    backup = true;
+                    break;
 
             }
         }
