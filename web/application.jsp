@@ -16,7 +16,11 @@
   <a href="#home" class="w3-bar-item w3-button w3-theme-l1">Applikation</a>
 </div>
 </div>
+<%
 
+  Customer test = new Customer();
+  Customer.Createcustomer();
+%>
 
 </body>
 

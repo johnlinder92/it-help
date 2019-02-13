@@ -8,14 +8,14 @@ import java.util.UUID;
 
 public class Customer implements Serializable {
 
-    private static UUID CustomerID = UUID.randomUUID();
-    private static int counter;
+    private UUID CustomerID;
     private Name name;
     private String email;
     private ArrayList<Goods> cart;
     private Address address;
 
     public Customer(Name name, String email, ArrayList<Goods> cart, Address address) {
+        this.CustomerID = CustomerID.randomUUID();
         this.name = name;
         this.email = email;
         this.cart = cart;
@@ -89,20 +89,12 @@ return total;
         this.address = address;
     }
 
-    public static UUID getCustomerID() {
+    public UUID getCustomerID() {
         return CustomerID;
     }
 
-    public static void setCustomerID(UUID customerID) {
+    public void setCustomerID(UUID customerID) {
         CustomerID = customerID;
-    }
-
-    public static int getCounter() {
-        return counter;
-    }
-
-    public static void setCounter(int counter) {
-        Customer.counter = counter;
     }
 
     public ArrayList<Goods> getCart() {
