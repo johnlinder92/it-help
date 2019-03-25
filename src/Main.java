@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
 
 
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ConsoleHandler ch = new ConsoleHandler(scanner);
@@ -57,13 +58,15 @@ public class Main {
                                     storage.kundlista.get(i).Addgoodstocustomer(storage.kundlista.get(i), storage.varulager.get(r));
                                     System.out.println("Vara:" + storage.varulager.get(r) + " tillagd till kund: " + storage.kundlista.get(i));
                                     backup = true;
+                                    break;
 
 
                                 }
 
                             }
+
                         }
-break;
+
                     }
                 case 4: System.out.println(storage.kundlista);
                 backup=true;
@@ -79,7 +82,7 @@ break;
                     int localint= Customer.calculateTotalcartprice(local.getCart());
                     System.out.println(local);
                     System.out.print("Varukorgens totala kostnad:");
-                    System.out.print(localint);
+                    System.out.println(localint);
                     backup=true;
                     break;
                 case 7:

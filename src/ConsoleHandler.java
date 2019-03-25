@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ConsoleHandler {
@@ -39,16 +40,12 @@ public class ConsoleHandler {
         try {
             text = scanner.nextLine();
 
-        } catch (InputMismatchException e) {
+        } catch (NoSuchElementException e) {
 
             System.out.println("Felaktig inmatning!");
 
         }
-        catch(NumberFormatException a){
 
-            System.out.println("Felaktig inmatning!");
-
-        }
         return text;
 
     }

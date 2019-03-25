@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <title>John Linder</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
   <a href="#home" class="w3-bar-item w3-button w3-theme-l1">Applikation</a>
 </div>
 </div>
-
+<p th:text="'Hello, ' + ${name} + '!'" />
 
 </body>
 

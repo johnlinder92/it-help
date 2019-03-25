@@ -65,6 +65,7 @@ return total;
                 '}';
     }
 
+    //<editor-fold desc="getters and setters">
     public Name getName() {
         return name;
     }
@@ -104,7 +105,9 @@ return total;
     public void setCart(ArrayList<Goods> cart) {
         this.cart = cart;
     }
+    //</editor-fold>
 
+    //<editor-fold desc="equals override">
     @Override
     public boolean equals(Object o) {
 
@@ -128,6 +131,7 @@ return total;
             return result;
 
     }
+    //</editor-fold>
 }
 
 
